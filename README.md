@@ -1,28 +1,30 @@
 # Elevator Challenge
 
 ## Description
-For this challenge, you will be implementing Javascript code to represent an elevator picking up various people throughout a day. While it may seem trivial, you will quickly find out all the nuances of the elevator world and be marveled that they work as well as they do. You cannot move on to the next Level unless you have completed the current Level (or made a valiant effort).
+For this challenge, you will be implementing an API for an elevator with JavaScript. While it may seem trivial, you will quickly find out all the nuances of the elevator world and be marveled that they work as well as they do. You cannot move on to the next Level unless you have completed the current Level (or made a valiant effort).
 
-We will focus heavily on TDDing and writing super clean code. This project is not graded but you will be presenting your work to a panel of expert elevator code engineers to judge you on your logic decisions and Javascript style.  The panel will declare a winner based on the following criteria:
+We will focus heavily on TDD and writing super clean code. You will then whiteboard and explain your implementation and defend your logic decisions to the instructors. We will be considering the following criteria:
+
 * Code Quality
 * Robustness of test suite
 * Efficiency of elevator algorithm
 * Number of Levels completed
 
-Fabulous prizes will be showered on said winner.
 
 ### Level 0
 * Pencil and paper out the elevator process. What kinds of things do you need to keep track of? What is a modern elevator's pickup and drop off strategy?
 
 ### Level 1
 * Build two Javascript classes - Elevator and Person. A
-person should be able to request a drop off floor to the elevator. The elevator should be able to pick up the person on their current floor and drop them off on the requested floor.
+person should be able to request a drop off floor. The elevator should be able to pick up the person on their current floor and drop them off on the requested floor.
+
 * Elevator properties:
   * When a class of Elevator is instantiated, it should start on floor 0 (lobby).
   * It should be able to keep track of it's current floor.
   * It should be able to keep track of how many total floors it has traversed and how many total stops it has made.
   * It should store a collection of requests and a collection of current riders on the elevator.
   * It has one of three statuses at any given moment: "idle", "moving", and "broken".
+  
 * Person properties:
   * Name
   * Current floor
