@@ -52,20 +52,14 @@ person should be able to request a drop off floor. The elevator should be able t
   * All four tests should assert the total number of requests and current riders.
 
 ### Level 5
-* Create a git hook at the commit-msg hook to check that all commit messages include 'Level x', where x is the level number you working on.
-
-### Level 6
 * Have the elevator return to floor 0 (lobby) if there are no current riders in the elevator and the current time is before 12:00 p.m.
 * Have the elevator stay on current floor of last drop off if there are no current riders in the elevator and the current time is after 12:00 p.m.
 
-### Level 7
+### Level 6
 * Create a more efficient algorithm for pickups and drop offs. Whatever algorithm you chose needs to be tested against the same four Level 4 situations and show for each situation the elevator traversed less total floors.
 
-### Level 8
-* If the elevator holds more than 4 riders at any given time, change the status of the elevator to 'broken'.
-
-### Level 9
+### Level 7
 * Create a DOM representation of the elevator and people to visualize the elevator process.
 
-### Level 10
+### Level 8
 * Replace all insertions and deletions of requests and current riders with API calls to a Node/Express backend with the correct CRUD methods.
