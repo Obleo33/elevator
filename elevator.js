@@ -43,7 +43,7 @@ export default class Elevator {
   }
 
   goToFloor (person) {
-    this.addRequest(person)
+    person && this.addRequest(person)
 
     if(this.requests.length) {
       const rider = this.requests[0]
@@ -56,9 +56,7 @@ export default class Elevator {
       this.calculateTotalFloors()
     }
 
-    if(this.requests.length){
-      this.goToFloor()
-    }
+    this.requests.length && this.goToFloor()
   }
 
   reset() {

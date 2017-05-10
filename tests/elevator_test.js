@@ -109,7 +109,7 @@ describe('Elevator', function() {
     assert.equal(elevator.totalFloors, 15)
   })
 
-  it('should deliver user1 before picking up user2', () => {
+  it('should deliver two users going up', () => {
     let mockUser = new Person({ name: "Bob", currentFloor: 2, dropOffFloor: 8 })
     let mockUser2 = new Person({ name: "Homer", currentFloor: 4, dropOffFloor: 6 })
 
@@ -121,6 +121,48 @@ describe('Elevator', function() {
     elevator.goToFloor()
     assert.deepEqual(elevator.stops, [0,2,8,4,6])
     assert.equal(elevator.totalFloors, 14)
+  })
+
+  it('should deliver user1 up and user2 going down', () => {
+    let mockUser = new Person({ name: "Bob", currentFloor: 2, dropOffFloor: 8 })
+    let mockUser2 = new Person({ name: "Homer", currentFloor: 6, dropOffFloor: 0 })
+
+    elevator.addRequest(mockUser)
+    elevator.addRequest(mockUser2)
+
+    assert.equal(elevator.requests.length, 2)
+
+    elevator.goToFloor()
+    assert.deepEqual(elevator.stops, [0,2,8,6,0])
+    assert.equal(elevator.totalFloors, 16)
+  })
+
+  it('should deliver user1 down and user2 going up', () => {
+    let mockUser = new Person({ name: "Bob", currentFloor: 8, dropOffFloor: 0 })
+    let mockUser2 = new Person({ name: "Homer", currentFloor: 4, dropOffFloor: 6 })
+
+    elevator.addRequest(mockUser)
+    elevator.addRequest(mockUser2)
+
+    assert.equal(elevator.requests.length, 2)
+
+    elevator.goToFloor()
+    assert.deepEqual(elevator.stops, [0,8,0,4,6])
+    assert.equal(elevator.totalFloors, 22)
+  })
+
+  it('should deliver two users going down', () => {
+    let mockUser = new Person({ name: "Bob", currentFloor: 8, dropOffFloor: 0 })
+    let mockUser2 = new Person({ name: "Homer", currentFloor: 4, dropOffFloor: 0 })
+
+    elevator.addRequest(mockUser)
+    elevator.addRequest(mockUser2)
+
+    assert.equal(elevator.requests.length, 2)
+
+    elevator.goToFloor()
+    assert.deepEqual(elevator.stops, [0,8,0,4,0])
+    assert.equal(elevator.totalFloors, 24)
   })
 
 });
