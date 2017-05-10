@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alex-Tideman/elevator_challenge.git"
+    "url": "git+https://github.com/Alex-Tideman/elevator_challenge.git"
   },
   "author": "Turing School",
   "license": "ISC",
@@ -21,8 +21,12 @@
   "homepage": "https://github.com/Alex-Tideman/elevator_challenge",
   "devDependencies": {
     "babel-core": "^6.22.1",
-    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
-  }
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "keywords": []
 }
